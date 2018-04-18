@@ -6,5 +6,10 @@ pipeline {
         checkout scm
       }
     }
+    stage('test/') {
+      steps {
+        archiveArtifacts 'target/surefire-reports/*.xml'
+      }
+    }
   }
 }
