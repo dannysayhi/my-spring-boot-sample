@@ -8,6 +8,7 @@ pipeline {
     }
     stage('test/') {
       steps {
+        sh 'mvn test'
         archiveArtifacts 'target/surefire-reports/*.xml'
       }
     }
